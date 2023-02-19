@@ -1,4 +1,4 @@
-# This sample gives an idea of how I write technical documentation...
+# Sample readme 
 
 
 ## Step-by-step guide for Cypress setup + testing
