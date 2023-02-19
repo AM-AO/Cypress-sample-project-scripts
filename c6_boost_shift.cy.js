@@ -40,7 +40,7 @@ describe('boosts a shift', ()=>{
 
     it ('edits the shift rate', () =>{
         cy.get('#rates-expansion-panel').click()
-        cy.get('#editshift-pay-adj').click().type('{backspace} {backspace} {backspace} {backspace}').type('5.00')
+        cy.get('#editshift-pay-adj').click().type('{backspace}').type('5.00')
     })
 
     it ('selects a reason for the adjustment and saves', () =>{
