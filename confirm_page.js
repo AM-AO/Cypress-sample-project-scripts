@@ -1,5 +1,5 @@
 //prevents cypress from failing tests due to exceptions in application code
-Cypress.on('uncaught:exception', (err, runnable)=>{
+Cypress.on('uncaught:exception', (err, runnable) => {
     return false})
 
 export class ConfirmPage {
