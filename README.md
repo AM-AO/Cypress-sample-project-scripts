@@ -1,4 +1,7 @@
-# Step-by-step guide for Cypress testing
+# This sample gives an idea of how I write technical documentation...
+
+
+## Step-by-step guide for Cypress setup + testing
 
 ### Outline: 
 1. Installing Cypress
@@ -42,9 +45,9 @@ Then, clone the repository using:
 
 Then: 
 
-`cd maestra`
+`cd [folder]`
 
-Then checkout the relevant QA branch (for example, feature/QA-regression) using: 
+Then checkout the relevant QA branch (for example, feature/regression-test-suite) using: 
 
 `git checkout [branch]`
 
@@ -54,69 +57,21 @@ First, install Docker Desktop here:
 
 https://www.docker.com/products/docker-desktop/
 
-note: Docker Desktop will need to be running on your machine in order to run tests in a docker container
+Docker Desktop will need to be running on your machine in order to run tests in a docker container
 
 Local Docker Instance Setup (the following is copied from the guide at https://gitlab.pas-digital.com/mas-medical/maestra/-/blob/develop/README.md )
 
-### 3.1 Setup MongoDB and Redis
+<Refer to steps for setting up local environment, database, etc. here>
 
-3.1.1 Download latest MongoDB backup from
-
-https://cloud.mergeworld.com/url/e2ygigqjudrsgf6m
-PW: 82nekvws
-
-and place the file in the following directory
-
-`./docker/mongo/exports`
-
-3.1.2 Modify the `./docker-compose-support.yml` file and alter the environment variable `MONGO_EXPORT` to match the filename of the downloaded export from above.
-
-3.1.3 Once that is complete, make sure you have docker installed and execute the following from the root directory of the code repository: 
-
-`docker compose -f docker-compose-support.yml -p maestra-support up`
-
-note: The first time this runs, it could take an hour to finish. Please be patient on the first run. On subsequent runs it should take 10-15 seconds for the app to boot up.
-
-This will start up the MongoDB and import a MAS Medical export into it so there is some good data to work with.
-
-If there is ever a need to import a new database, just delete the contents of the `./docker/mongo/db` folder, with the exception of the .gitkeep file.
-
-### 3.2 Run Maestra app
- 
-3.2.1 Once the MongoDB docker is up and running you can execute the following to start the Maestra app locally:
-
-`docker compose -f docker-compose.yml up`
-
-On a Mac with the new M1 chips, run the following instead:
-
-`DOCKER_DEFAULT_PLATFORM=linux/amd64 docker compose -f docker-compose.yml up`
-
-3.2.2 Once this is up and running you should be able to access the login page here:
-
-http://localhost:8080/
-
-3.2.3. Shutdown docker services
-
-Execute the following to shutdown the Docker containers:
-
-`docker compose -f docker-compose.yml down`
-`docker compose -f docker-compose-support.yml down`
-
-## 4. Running tests!(WIP)
+## 4. Running tests!
 
 4.1 Running tests within a docker container
 
-note: Make sure that all of the above steps have been completed before running tests for the first time. When the above has been verified, execute the following from your terminal: 
-
-`docker compose -f docker-compose-cypress.yml up --exit-code-from cypress`
-
-This will start Redis, Mongo, and Maestra, then wait for Maestra to load and then run all the Cypress tests. When the tests have completed all of the containers will exit.
+`docker compose -f docker-compose-cypress.yml up --<custom command>`
 
 4.2 Running tests in the staging environment 
 
 Commands: 
-
-**note: Change directory to e2e_cypress_testing before executing the following cypress commands.**
 
 For security reasons, no passwords are not saved within the code or repository. Passwords can be passed whenever the tests are run by using `CYPRESS_password=password` as a prefix to any cypress command.
 
