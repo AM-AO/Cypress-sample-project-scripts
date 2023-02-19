@@ -7,18 +7,14 @@ Cypress.on('uncaught:exception', (err, runnable)=>{
     //navigates to the scheduling page
     goToScheduling(){
       cy.get('#Scheduling').click()
-      cy.wait(6000)
     }
 
     //selects a facility from dropdown
     selectFacility(){
-      // cy.wait(6000)
       cy.get('#facility-select-input-0').click({force: true})
-      // cy.wait(6000)
       cy.get('#react-select-2-option-0').should('exist')
       cy.get('#react-select-2-option-0').click({force: true})
       
-      // cy.get('li').contains('AA AUTOMATION FACILITY').click({force: true})
       return this;
     }
 
@@ -48,7 +44,7 @@ Cypress.on('uncaught:exception', (err, runnable)=>{
       cy.get('#next-week').dblclick({force:true}).dblclick({force:true})
     }
 
-    //clicks the 'RN' radio button to select caregiver type
+    //clicks the radio button to select caregiver type
     setCaregiverType(){
       cy.get('#RN').click({force: true})
     }
