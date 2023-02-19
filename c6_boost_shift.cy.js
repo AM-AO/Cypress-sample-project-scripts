@@ -1,8 +1,6 @@
 import { LoginPage } from '../page-objects/login_page'
 import { SchedulingPage } from '../page-objects/scheduling_page'
 
-//test to boost a shift
-
 describe('boosts a shift', ()=>{
     const schedulingPage = new SchedulingPage()
     const loginPage = new LoginPage()
@@ -24,7 +22,7 @@ describe('boosts a shift', ()=>{
         schedulingPage.selectFacility()
     })
 
-    it('selects RN radio button', ()=>{
+    it('selects employee type', ()=>{
         schedulingPage.setCaregiverType()
       })
     
@@ -47,7 +45,7 @@ describe('boosts a shift', ()=>{
 
     it ('selects a reason for the adjustment and saves', () =>{
         cy.get('[id^=pay-adjust-reason]').first().click()
-        cy.get('li').contains('Urgent Facility Requirement').click()
+        cy.get('li').contains('Urgent Requirement').click()
         cy.get('#save-add-emp-btn').click()
         cy.wait(5000)
     })
