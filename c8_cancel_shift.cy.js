@@ -1,8 +1,6 @@
 import { LoginPage } from '../page-objects/login_page'
 import { SchedulingPage } from '../page-objects/scheduling_page'
 
-//test to cancel a shift
-
 describe('cancels a shift', ()=>{
     const schedulingPage = new SchedulingPage()
     const loginPage = new LoginPage()
