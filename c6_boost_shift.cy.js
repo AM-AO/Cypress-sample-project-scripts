@@ -47,7 +47,6 @@ describe('boosts a shift', ()=>{
         cy.get('[id^=pay-adjust-reason]').first().click()
         cy.get('li').contains('Urgent Requirement').click()
         cy.get('#save-add-emp-btn').click()
-        cy.wait(5000)
     })
 
     it ('deletes the test shift', () =>{
