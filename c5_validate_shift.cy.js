@@ -1,11 +1,11 @@
 import { LoginPage } from '../page-objects/login_page'
 import { ValidationPage } from '../page-objects/validation_page'
 
-describe('validates a shift', ()=>{
+describe('validates a shift', () => {
     const loginPage = new LoginPage()
     const validationPage = new ValidationPage()
 
-    it('logs a user in', ()=>{
+    it('logs a user in', () => {
         const username = Cypress.env('username')
         const password = Cypress.env('password')
   
@@ -14,11 +14,11 @@ describe('validates a shift', ()=>{
         loginPage.validateURL()
     })
 
-    it('goes to the validation screen', () =>{
+    it('goes to the validation screen', () => {
         validationPage.goToValidation()
     })
 
-    it('edits the first shift', ()=>{
+    it('edits the first shift', () => {
 
         //selects the shift and clicks the "edit" icon
         cy.get('.ag-row-first > [aria-colindex="3"]').click()
@@ -49,7 +49,7 @@ describe('validates a shift', ()=>{
         
     })
 
-    it ('resets test data', () =>{
+    it ('resets test data', () => {
         
         //this step unassociates the timesheet so that the unvalidated shift will be available for the next test run:
         
