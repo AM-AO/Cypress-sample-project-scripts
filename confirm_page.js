@@ -10,7 +10,6 @@ export class ConfirmPage {
       }
 
     unconfirmedShiftAppears(){
-        // cy.get('.ag-body-viewport').should('exist', '.ag-row')
         cy.get('.ag-row').should('exist')
     }
 
