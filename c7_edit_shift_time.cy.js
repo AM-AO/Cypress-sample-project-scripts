@@ -5,7 +5,7 @@ describe('edits a shift time', () => {
     const schedulingPage = new SchedulingPage()
     const loginPage = new LoginPage()
 
-    it('logs a user in', ()=>{
+    it('logs a user in', () => {
         const username = Cypress.env('username')
         const password = Cypress.env('password')
   
@@ -14,31 +14,31 @@ describe('edits a shift time', () => {
         loginPage.validateURL()
     })
 
-    it('navigates to the scheduling page', () =>{
+    it('navigates to the scheduling page', () => {
         schedulingPage.goToScheduling()
     })
 
-    it ('selects a facility', () =>{
+    it ('selects a facility', () => {
         schedulingPage.selectFacility()
     })
 
-    it('selects an employee', () =>{
+    it('selects an employee', () => {
         schedulingPage.selectEmployee()
     })
 
-    it('moves two weeks ahead', ()=>{
+    it('moves two weeks ahead', () => {
         schedulingPage.goNextNextWeek()
     })
 
-    it ('adds a shift', ()=>{
+    it ('adds a shift', () => {
         schedulingPage.addShift()
     })
 
-    it ('selects the shift', ()=>{
+    it ('selects the shift', () => {
         schedulingPage.selectOpenShift()
     })
 
-    it ('edits the shift time', ()=>{
+    it ('edits the shift time', () => {
 
         //opens the 'time:' dropdown
         cy.get('#time-expansion-panel').click()
@@ -59,7 +59,7 @@ describe('edits a shift time', () => {
 
     })
 
-    it ('deletes the test shift', () =>{
+    it ('deletes the test shift', () => {
         schedulingPage.deleteTestShift()
     })
     
