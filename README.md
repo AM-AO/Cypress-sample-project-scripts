@@ -59,9 +59,8 @@ https://www.docker.com/products/docker-desktop/
 
 Docker Desktop will need to be running on your machine in order to run tests in a docker container
 
-Local Docker Instance Setup (the following is copied from the guide at https://gitlab.pas-digital.com/mas-medical/maestra/-/blob/develop/README.md )
 
-<Refer to steps for setting up local environment, database, etc. here>
+<Reference steps for setting up local environment, database, etc. here>
 
 ## 4. Running tests!
 
@@ -73,7 +72,7 @@ Local Docker Instance Setup (the following is copied from the guide at https://g
 
 Commands: 
 
-No passwords are saved within the code or repository. Passwords can be passed whenever the tests are run by using `CYPRESS_password=password` as a prefix to any cypress command.
+Passwords can be passed whenever the tests are run by using `CYPRESS_password=password` as a prefix to any cypress command.
 
 For example, to open the cypress test runner, use`CYPRESS_password=password npx cypress open` 
 
