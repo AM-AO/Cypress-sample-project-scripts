@@ -7,6 +7,5 @@ Cypress.on('uncaught:exception', (err, runnable)=>{
       //navigates to the scheduling page
       goToValidation(){
         cy.get('#Validation').click()
-        cy.wait(7000)
     }
     }
