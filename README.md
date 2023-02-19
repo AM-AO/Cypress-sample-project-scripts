@@ -73,7 +73,7 @@ Local Docker Instance Setup (the following is copied from the guide at https://g
 
 Commands: 
 
-For security reasons, no passwords are not saved within the code or repository. Passwords can be passed whenever the tests are run by using `CYPRESS_password=password` as a prefix to any cypress command.
+No passwords are saved within the code or repository. Passwords can be passed whenever the tests are run by using `CYPRESS_password=password` as a prefix to any cypress command.
 
 For example, to open the cypress test runner, use`CYPRESS_password=password npx cypress open` 
 
