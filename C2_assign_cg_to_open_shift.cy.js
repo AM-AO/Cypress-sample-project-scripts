@@ -7,7 +7,7 @@ describe('assigns a caregiver to an open shift', ()=>{
     const loginPage = new LoginPage()
     const confirmPage = new ConfirmPage()
 
-    it('logs in with MAS scheduler user', ()=>{
+    it('logs in with user type 1', ()=>{
         const username = Cypress.env('username')
         const password = Cypress.env('password')
   
@@ -16,17 +16,15 @@ describe('assigns a caregiver to an open shift', ()=>{
         loginPage.validateURL()
     })
 
-    //1. Click the "Scheduling" tab
     it('navigates to the scheduling page', () =>{
         schedulingPage.goToScheduling()
       })
 
-    //2. Click the facility drop down and select a facility
     it ('selects a facility', () =>{
         schedulingPage.selectFacility()
     })
 
-    it('sets caregiver type', ()=>{
+    it('sets employee type', ()=>{
         schedulingPage.setCaregiverType()
     })
 
@@ -42,27 +40,22 @@ describe('assigns a caregiver to an open shift', ()=>{
         schedulingPage.shiftAppears()
     })
 
-    //3. Click the employee drop down and select an employee
     it('selects an employee', () =>{
         schedulingPage.selectEmployee()
     })
 
-    //4. Select the "open" view
     it('views open shifts', () =>{ 
         schedulingPage.viewOpenShifts()
     })
 
-    //5. Left-click the shift
     it('selects the assigned shift', () =>{
         schedulingPage.selectOpenShift()
     })
 
-    //6. Select "unconfirmed" in the "Assign Shift?" modal
     it ('assigns caregiver to unassigned shift', () =>{
         schedulingPage.assignCaregiver()
     })
 
-    //7. Click the "Confirm" tab and verify the assigned shift is present on the list of unconfirmed shifts
     it ('verifies shift is available on confirmations screen', () =>{
         confirmPage.goToConfirm()
         confirmPage.unconfirmedShiftAppears()
