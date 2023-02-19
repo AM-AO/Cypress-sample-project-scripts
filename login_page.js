@@ -1,13 +1,9 @@
 //prevents cypress from failing tests due to exceptions in application code
-Cypress.on('uncaught:exception', (err, runnable)=>{
+Cypress.on('uncaught:exception', (err, runnable) => {
   return false})
 
 export class LoginPage {
 
-  //navigates to login page
-  // navigate(){
-  //   cy.visit('/')
-  // }
 
   //logs in 
   login(userName,password){
