@@ -13,7 +13,7 @@ export class DashboardPage {
 
   //logs the user out
   logOut(){
-    cy.get('#download-menu-button > span > svg').click()
+    cy.get('#download-menu-button').click()
     cy.get('#menu-appbar-download').contains('Logout').click()
   }
   
