@@ -1,9 +1,7 @@
 import { LoginPage } from '../page-objects/login_page'
 import { SchedulingPage } from '../page-objects/scheduling_page'
 
-//test to edit a shift time
-
-describe('edits a shift time', ()=>{
+describe('edits a shift time', () => {
     const schedulingPage = new SchedulingPage()
     const loginPage = new LoginPage()
 
